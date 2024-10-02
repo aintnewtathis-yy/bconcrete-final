@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+	import { page } from '$app/stores';
 
     let { categories, currentFilter = $bindable() } = $props();
     let sheet;
