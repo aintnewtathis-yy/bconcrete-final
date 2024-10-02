@@ -28,7 +28,7 @@
             {#each articleData.infoBlock as block, i}
                 <div class="flex gap-4 justify-between max-sm:flex-col" class:flex-row-reverse={i % 2 == 0} >
                     <div class="w-2/5 max-sm:w-full">
-                        {@html block.content}
+                        {@html marked.parse(block.content)}
                     </div>
                     <div class="w-2/5 max-sm:w-full" class:w-[50%]={i % 2 == 0}>
                         <img class="rounded" src={CMS_URL + block.image.url} width={block.image.width} height={block.image.height} alt={block.image.alternativeText}>
