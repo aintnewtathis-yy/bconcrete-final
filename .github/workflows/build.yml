@@ -24,6 +24,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
+      - name: Debug Build Arguments
+        run: |
+          echo "Build arguments: PUBLIC_HELLO=world CMS_URL=${{ secrets.CMS_URL }}"
+
       - name: Build
         run: npm run build
         
