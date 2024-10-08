@@ -3,7 +3,7 @@
 </script>
 
 {#snippet card(content)}
-    <a href={'/catalog?' + content.url} class="flex flex-col gap-4 group/item max-lg:flex-shrink-0 max-lg:flex-grow-0 max-lg:w-5/12 max-sm:w-2/3 max-sm:gap-3 ">
+    <a href={'/catalog?filter=' + content.url} class="flex flex-col gap-4 group/item max-lg:flex-shrink-0 max-lg:flex-grow-0 max-lg:w-5/12 max-sm:w-2/3 max-sm:gap-3 ">
         <div class=" overflow-hidden rounded">
             <img 
             src={CMS_URL + content.thumbnail.formats.large.url} 
