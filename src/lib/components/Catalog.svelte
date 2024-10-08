@@ -5,6 +5,8 @@
  
     let {products, categories, CMS_URL} = $props()
 
+    console.log(products)
+
     const currentFilter = $derived($page.url.searchParams.get("filter") ?? "");
 
     const getFilteredProducts = (products, currentFilter) => {
@@ -18,9 +20,9 @@
 </script>
 
 {#snippet productCard(content, index)}
-    <a href={'/catalog/' + content.seo.slug} aria-label="product card" class="flex flex-col flex-shrink-0 flex-grow-0 gap-5 pb-1 max-sm:gap-3" class:span={index%2 === 1 && index%3 === 0} class:mob-span={index%5 === 0 }  >
-        <img src={CMS_URL + content.thumbnail.url} class="flex-grow object-cover rounded" width={content.thumbnail.width} height={content.thumbnail.height} alt={content.thumbnail.alternativeText}>
-        <div class="flex flex-col gap-3">
+    <a href={'/catalog/' + content.seo.slug} aria-label="product card" class="flex flex-col flex-shrink-0 flex-grow-0 gap-4 pb-1 max-sm:gap-3" class:span={index%2 === 1 && index%3 === 0} class:mob-span={index%5 === 0 }  >
+        <img src={CMS_URL + content.thumbnail.formats.large.url} class="flex-grow object-cover rounded" width={content.thumbnail.width} height={content.thumbnail.height} alt={content.thumbnail.alternativeText}>
+        <div class="flex flex-col gap-2">
             <div class="flex gap-3 justify-between max-sm:flex-col max-sm:gap-2">
                 <p class="text-lg max-sm:text-base">{content.title}</p>
                 <p class="text-lg max-sm:text-sm whitespace-nowrap">
@@ -33,8 +35,8 @@
             <div class="flex gap-2 max-sm:gap-1">
                 {#each content.colors as color}
                     <div 
-                    class=" rounded-full w-5 h-5 max-sm:w-4 max-sm:h-4"
-                    style="background-color: {color.color};  outline-color:{color.color};"
+                    class=" rounded-full w-5 h-5 max-sm:w-4 max-sm:h-4 border border-[#cccccc]"
+                    style="background-color: {color.color}; "
                     class:outline-active={true}
                     ></div>
                 {/each}

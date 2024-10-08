@@ -155,7 +155,6 @@
             class:pointer-events-auto={changed}
             onclick={() => {
                 currentFilter = ""
-                console.log($page)
             }}
         >
             Сбросить фильтры

@@ -28,11 +28,6 @@
             href: "#"
         },
     ]
-
-    $effect(() => {
-        $inspect(data);
-        console.log(featuredProducts);
-    })
 </script>
 
 <Hero />

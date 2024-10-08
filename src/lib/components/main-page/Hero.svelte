@@ -134,7 +134,7 @@
 {#snippet slide(content, index)}
     <div class="w-1/2 flex opacity-0 flex-col justify-center h-full gap-4 transition-all absolute max-sm:w-full max-sm:justify-start max-sm:mt-32" data-visible={index} transition:fade>
         <h1 class="text-6xl text-balance max-lg:text-5xl max-sm:text-4xl">{content.h1}</h1>
-        <p class="text-xl text-balance w-3/4 max-sm:text-lg">{content.p}</p>
+        <p class="text-xl w-3/5 max-sm:text-lg">{content.p}</p>
         <a href="{content.btnLink}" class="btn-dark mt-4">{content.btnText}</a>
     </div>
 {/snippet}

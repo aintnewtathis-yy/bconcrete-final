@@ -4,8 +4,6 @@
     let { content, index } = $props()
     let open = $state(false);
 
-    console.log(content)
-
     function openFilters() {
         open = !open;
     }

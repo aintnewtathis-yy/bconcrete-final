@@ -1,94 +1,11 @@
 <script>
     let { title, products, CMS_URL } = $props()
-
-    console.log(CMS_URL)
-    let productsContent = [
-        {
-            href: '/catalog/123',
-            title: 'Столешница Wegner CH07 Shell',
-            price: '12112',
-            image: '/product-card.png',
-            colors: [
-                '#CBC2B8',
-                '#C5B7A3',
-                '#A98F77',
-                '#5D151A',
-                '#2C2C2C',
-            ]
-        },
-        {
-            href: '/catalog/123',
-            title: 'Столешница Wegner CH07 Shell',
-            price: '12112',
-            image: '/product-card.png',
-            colors: [
-                '#CBC2B8',
-                '#C5B7A3',
-                '#A98F77',
-                '#5D151A',
-                '#2C2C2C',
-            ]
-        },
-        {
-            href: '/catalog/123',
-            title: 'Столешница Wegner CH07 Shell',
-            price: '12112',
-            image: '/product-card.png',
-            colors: [
-                '#CBC2B8',
-                '#C5B7A3',
-                '#A98F77',
-                '#5D151A',
-                '#2C2C2C',
-            ]
-        },
-        {
-            href: '/catalog/123',
-            title: 'Столешница Wegner CH07 Shell',
-            price: '12112',
-            image: '/product-card.png',
-            colors: [
-                '#CBC2B8',
-                '#C5B7A3',
-                '#A98F77',
-                '#5D151A',
-                '#2C2C2C',
-            ]
-        },
-        {
-            href: '/catalog/123',
-            title: 'Столешница Wegner CH07 Shell',
-            price: '12112',
-            image: '/product-card.png',
-            colors: [
-                '#CBC2B8',
-                '#C5B7A3',
-                '#A98F77',
-                '#5D151A',
-                '#2C2C2C',
-            ]
-        },
-        {
-            href: '/catalog/123',
-            title: 'Столешница Wegner CH07 Shell',
-            price: '12112',
-            image: '/product-card.png',
-            colors: [
-                '#CBC2B8',
-                '#C5B7A3',
-                '#A98F77',
-                '#5D151A',
-                '#2C2C2C',
-            ]
-        },
-        
-    ]
 </script>
 
 {#snippet productCard(content, index)}
-    <a href={'/catalog/' + content.seo.slug} aria-label="product card" class="flex flex-col flex-shrink-0 flex-grow-0 gap-5 max-sm:w-2/3 max-sm:gap-3 pb-1">
-        <img src={CMS_URL + content.thumbnail.url} class="flex-grow object-cover rounded" width={content.thumbnail.width} height={content.thumbnail.height} alt={content.thumbnail.alternativeText}>
-        <div class="flex flex-col gap-3">
+    <a href={'/catalog/' + content.seo.slug} aria-label="product card" class="flex flex-col flex-shrink-0 flex-grow-0 gap-4 max-sm:w-2/3 max-sm:gap-3 pb-1">
+        <img src={CMS_URL + content.thumbnail.formats.large.url} class="flex-grow object-cover rounded" width={content.thumbnail.width} height={content.thumbnail.height} alt={content.thumbnail.alternativeText}>
+        <div class="flex flex-col gap-2">
             <div class="flex gap-3 justify-between max-sm:flex-col max-sm:gap-2">
                 <p class="text-lg max-sm:text-base">{content.title}</p>
                 <p class="text-lg max-sm:text-sm whitespace-nowrap">
@@ -101,8 +18,8 @@
             <div class="flex gap-2">
                 {#each content.colors as color}
                     <div 
-                    class=" rounded-full w-5 h-5"
-                    style="background-color: {color.color};  outline-color:{color.color};"
+                    class=" rounded-full w-5 h-5 border border-[#cccccc]"
+                    style="background-color: {color.color};"
                     class:outline-active={true}
                     ></div>
                 {/each}
@@ -117,7 +34,9 @@
             <h3 class="text-5xl max-lg:text-3xl">{title}</h3>
             <div class="grid grid-cols-3 no-scrollbar gap-x-5 gap-y-8 max-lg:gap-x-3  max-sm:flex max-sm:overflow-x-auto">
                 {#each products as product, i}
-                    {@render productCard(product, i)} 
+                    {#if i < 6}
+                        {@render productCard(product, i)} 
+                    {/if}
                 {/each}
             </div>
         </div>

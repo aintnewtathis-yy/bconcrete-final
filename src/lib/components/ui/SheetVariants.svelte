@@ -1,7 +1,7 @@
 <script>
     let { colors } = $props()
     let open = $state(false);
-    let currentColor = $state(colors[0].color)
+    let currentColor = $state(colors[0])
 
     function openFilters() {
         open = !open;
@@ -14,28 +14,28 @@
         type="button" 
         class="flex flex-col gap-3" 
         onclick={() => {
-            currentColor = content.color
+            currentColor = content
         }}
     >
-        <div style="background-color: {content.color}; " class="rounded w-full min-h-40  aspect-[260/200]"></div>
+        <div style="background-color: {content.color}; " class="rounded w-full min-h-40 border-gray-200 border aspect-[260/200]"></div>
         <p class="p-2 rounded border transition duration-300" 
-            class:bg-transparent={content.color != currentColor}
-            class:border-[#CCCCCC]={content.color != currentColor}
-            class:bg-gray-800={content.color == currentColor}
-            class:border-gray-800={content.color == currentColor}
+            class:bg-transparent={content.color != currentColor.color}
+            class:border-[#CCCCCC]={content.color != currentColor.color}
+            class:bg-gray-800={content.color == currentColor.color}
+            class:border-gray-800={content.color == currentColor.color}
         > 
-            {content.color}
+            {content.title}
         </p>
     </button>
 {/snippet}
 
-<button class="btn w-full justify-between"  onclick={openFilters}>
+<button class="btn w-full justify-between "  onclick={openFilters}>
     <div class="flex gap-3 items-center">
         <div
             class="rounded-full w-5 h-5 outline outline-1 outline-offset-2 outline-[#919191]"
-            style="background-color: {currentColor};"
+            style="background-color: {currentColor.color};"
         ></div>
-        <p>{currentColor}</p>
+        <p>{currentColor.title}</p>
     </div>
     + {colors.length} цветов
 </button>

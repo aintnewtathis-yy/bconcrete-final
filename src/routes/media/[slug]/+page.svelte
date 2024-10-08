@@ -1,12 +1,20 @@
 <script>
+    import Seo from "$lib/components/utils/SEO.svelte";
 	import { marked } from 'marked';
 
     let { data } = $props();
 
     let { articleData, CMS_URL } = data
-    
-    console.log(articleData.infoBlock[0])
+
+    console.log(articleData)
 </script>
+
+<Seo
+    title={articleData.seo.title}
+    description={articleData.seo.description}
+    image={articleData.seo.image}
+    CMS_URL={data.CMS_URL}
+/>
 
 <section class="pt-16">
     <div class="container">
@@ -21,7 +29,7 @@
                     </div>
                     <div class="max-sm:hidden"></div>
                     <div>
-                        <img class="rounded" src={CMS_URL + articleData.thumbnail.url} width={articleData.thumbnail.width} height={articleData.thumbnail.height} alt={articleData.thumbnail.alternativeText}>
+                        <img class="rounded" src={CMS_URL + articleData.thumbnail?.formats.large.url} width={articleData.thumbnail?.width} height={articleData.thumbnail?.height} alt={articleData.thumbnail?.alternativeText}>
                     </div>
                 </div>
             </div>
@@ -31,7 +39,7 @@
                         {@html marked.parse(block.content)}
                     </div>
                     <div class="w-2/5 max-sm:w-full" class:w-[50%]={i % 2 == 0}>
-                        <img class="rounded" src={CMS_URL + block.image.url} width={block.image.width} height={block.image.height} alt={block.image.alternativeText}>
+                        <img class="rounded" src={CMS_URL + block.image?.url} width={block.image?.width} height={block.image?.height} alt={block.image?.alternativeText}>
                     </div>
                 </div>
             {/each}

@@ -21,7 +21,7 @@
         @apply w-fit flex items-center  rounded bg-gray-800 px-8 gap-3 py-3 text-lg text-black transition duration-300 hover:bg-gray-900 active:bg-gray-900 max-sm:text-base;
     }
     .btn-dark {
-        @apply w-fit flex items-center  rounded bg-gray-900 px-12 gap-3 py-4 text-lg text-black transition duration-300 hover:bg-gray-800 active:bg-gray-800 max-sm:text-base;
+        @apply w-fit flex items-center  rounded bg-gray-900 px-8 gap-3 py-3 text-lg text-black transition duration-300 hover:bg-gray-800 active:bg-gray-800 max-sm:text-base;
     }
     section {
         max-width: 1920px;
