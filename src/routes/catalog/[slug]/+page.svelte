@@ -37,7 +37,7 @@
                 >
                     <img
                         class="rounded object-cover object-bottom aspect-[970/730]"
-                        src={data.CMS_URL + productData.thumbnail?.url}
+                        src={data.CMS_URL + productData.thumbnail?.formats?.large.url}
                         alt={productData.thumbnail?.alternativeText}
                         width={productData.thumbnail?.width}
                         height={productData.thumbnail?.height}
@@ -46,7 +46,7 @@
                         {#each productData.gallery as image}
                             <img
                                 class="rounded object-cover object-bottom aspect-[970/730]"
-                                src={data.CMS_URL + image.url}
+                                src={data.CMS_URL + image?.formats?.large.url}
                                 alt={image.alternativeText}
                                 width={image.width}
                                 height={image.height}
