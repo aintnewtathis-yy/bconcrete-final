@@ -8,8 +8,8 @@
             <img 
             src={CMS_URL + content.thumbnail.formats.large.url} 
             alt={content.thumbnail.alternativeText}
-            width={content.thumbnail.width} 
-            height={content.thumbnail.height}>
+            width={content.thumbnail.formats.large.width} 
+            height={content.thumbnail.formats.large.height}>
         </div>
         <p class="text-xl transition group-hover/item:opacity-70 ">{content.title}</p>
     </a>

@@ -21,7 +21,7 @@
         href={'/media/' + content.seo.slug} 
         class="flex flex-col gap-4 flex-shrink-0 flex-grow-0"
     >
-        <img class="rounded" src={data.CMS_URL + content.thumbnail.formats.large.url} width={content.thumbnail.width} height={content.thumbnail.height} alt={content.thumbnail.alternativeText}>
+        <img class="rounded" src={data.CMS_URL + content.thumbnail.formats.large.url} width={content.thumbnail.formats.large.width} height={content.thumbnail.formats.large.height} alt={content.thumbnail.alternativeText}>
         <p class="text-lg">{content.title}</p>
     </a>
 {/snippet}

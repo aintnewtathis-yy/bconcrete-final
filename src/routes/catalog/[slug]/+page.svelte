@@ -7,7 +7,11 @@
 
     let { data } = $props();
 
+    
+
     let { productData } = data;
+
+    console.log(productData.thumbnail)
 </script>
 
 <Seo
@@ -37,10 +41,10 @@
                 >
                     <img
                         class="rounded object-cover object-bottom aspect-[970/730]"
-                        src={data.CMS_URL + productData.thumbnail?.formats?.large.url}
+                        src={data.CMS_URL + productData.thumbnail?.formats.large.url}
                         alt={productData.thumbnail?.alternativeText}
-                        width={productData.thumbnail?.width}
-                        height={productData.thumbnail?.height}
+                        width={productData.thumbnail?.formats.large.width}
+                        height={productData.thumbnail?.formats.large.height}
                     />
                     {#if productData.gallery}
                         {#each productData.gallery as image}
@@ -48,8 +52,8 @@
                                 class="rounded object-cover object-bottom aspect-[970/730]"
                                 src={data.CMS_URL + image?.formats?.large.url}
                                 alt={image.alternativeText}
-                                width={image.width}
-                                height={image.height}
+                                width={image.formats.large.width}
+                                height={image.formats.large.height}
                             />
                         {/each}
                     {/if}

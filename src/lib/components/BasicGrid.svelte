@@ -4,7 +4,7 @@
 
 {#snippet productCard(content, index)}
     <a href={'/catalog/' + content.seo.slug} aria-label="product card" class="flex flex-col flex-shrink-0 flex-grow-0 gap-4 max-sm:w-2/3 max-sm:gap-3 pb-1">
-        <img src={CMS_URL + content.thumbnail.formats.large.url} class="flex-grow object-cover rounded" width={content.thumbnail.width} height={content.thumbnail.height} alt={content.thumbnail.alternativeText}>
+        <img src={CMS_URL + content.thumbnail.formats.large.url} class="flex-grow object-cover rounded" width={content.thumbnail.formats.large.width} height={content.thumbnail.formats.large.height} alt={content.thumbnail.alternativeText}>
         <div class="flex flex-col gap-2">
             <div class="flex gap-3 justify-between max-sm:flex-col max-sm:gap-2">
                 <p class="text-lg max-sm:text-base">{content.title}</p>
