@@ -115,6 +115,7 @@
 
         return interval
     }
+
     $effect(() => {
         bgImage = window.innerWidth > 760 ? "background-image: url('/hero-bg.png');" : "background-image: url('/hero-bg-mobile.png');"
         paginationElmts = pagination.querySelectorAll(`[data-visible] div`)
@@ -143,7 +144,7 @@
     id="hero-main"
     bind:this={section}
     style={bgImage}
-    class=" h-full bg-no-repeat bg-cover aspect-video transition-all bg-center max-lg:aspect-square max-sm:aspect-auto max-sm:h-screen max-sm:bg-bottom "   
+    class=" h-full bg-no-repeat bg-cover aspect-video transition-all bg-center max-lg:aspect-square max-sm:aspect-auto max-sm:h-lvh max-sm:bg-bottom "   
 >
     <div class="container h-full">
         <div class="flex h-full" bind:this={slidesContainer}>
