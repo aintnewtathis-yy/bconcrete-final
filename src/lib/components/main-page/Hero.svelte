@@ -153,6 +153,7 @@
             {/each}
         </div>
 
+        
         <div class="flex gap-1 h-1 absolute bottom-24 left-5 items-end max-xl:bottom-16  max-sm:bottom-10" bind:this={pagination}>
             {#each sliderContent as _, i}
                 <button aria-label="button" class="bg-gray-700 h-full w-10 max-h-[2px] cursor-pointer transition-all" data-visible={i} onclick={sliderOnClick}>
