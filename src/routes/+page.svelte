@@ -9,6 +9,8 @@
 
     let { data } = $props();
 
+    console.log(data.CMS_URL)
+
     let featuredProducts = data.products.filter(product => product.featured === true)
 
     let media= [
