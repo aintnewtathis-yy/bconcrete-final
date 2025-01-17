@@ -76,9 +76,9 @@
                             <SheetSizes sizes={productData.sizes} />
                         {/if}
                     </div>
-                    <a href={productData.dddModel} class="text-lg"
+                    <!-- <a href={productData.dddModel} class="text-lg"
                         >Скачать 3D модель</a
-                    >
+                    > -->
                     <a
                         href="#"
                         class="p-4 border border-dashed border-gray-200 rounded flex flex-col gap-3"

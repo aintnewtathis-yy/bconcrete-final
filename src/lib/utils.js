@@ -4,7 +4,8 @@ export async function fetchWithRetry(url, options = {}, retries = 2) {
 			const response = await fetch(url, options);
 			const responseData = await response.json()
 
-			if(responseData.data.length > 0) {
+            console.log(responseData)
+			if(responseData || responseData.length != 0) {
 				return responseData
 			} else if(attempt === retries) {
 				return false

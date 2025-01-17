@@ -1,4 +1,5 @@
 <script>
+    import { CMS_URL } from "$lib/urls";
     let { title, desc, btnHref, btnText, image } = $props()
 </script>
 
@@ -10,7 +11,7 @@
                 <p class="w-1/3 max-lg:w-1/2 max-sm:w-full">{desc}</p>
                 <a href={btnHref} class="btn">{btnText}</a>
             </div>
-            <img class="rounded mt-8" src={image} alt="huge product" loading="lazy">
+            <img class="rounded mt-8" src={CMS_URL + image} alt="huge product" loading="lazy">
         </div> 
     </div>
 </section>

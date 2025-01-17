@@ -12,7 +12,7 @@
     function scrollHeader() {
         let lastScrollTop;
         scrollAmount = homePage
-            ? document.querySelector("#hero-main").scrollHeight
+            ? document.querySelector("#hero-main")?.scrollHeight
             : headerScroll.scrollHeight;
 
         window.addEventListener("scroll", function () {

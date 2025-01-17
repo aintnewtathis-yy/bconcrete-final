@@ -1,7 +1,8 @@
 <script>
+    import { CMS_URL } from "$lib/urls";
 	import { page } from '$app/stores';
 
-    let {title, description, image, CMS_URL} = $props()
+    let {title, description, image} = $props()
 </script>
 
 <svelte:head>
