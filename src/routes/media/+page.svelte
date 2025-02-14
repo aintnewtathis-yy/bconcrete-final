@@ -29,7 +29,7 @@
 {#snippet categoryLink(content)}
     <a
         href="/media/?filter={content.url}"
-        class:bg-gray-800 ={content.url != currentFilter}
+        class:bg-main-800 ={content.url != currentFilter}
         class:bg-black={content.url === currentFilter}
         class:text-white={content.url === currentFilter}
         class="py-3 px-8 whitespace-nowrap rounded max-lg:py-2 max-lg:px-6 transition duration-300"
@@ -43,7 +43,7 @@
             <div class="flex gap-8 no-scrollbar overflow-y-hidden overflow-x-auto max-lg:gap-6">
                 <a
                     href="/media/"
-                    class="py-3 px-8 whitespace-nowrap rounded max-lg:py-2 max-lg:px-6 transition duration-300 bg-gray-800"
+                    class="py-3 px-8 whitespace-nowrap rounded max-lg:py-2 max-lg:px-6 transition duration-300 bg-main-800"
                 >Все</a>
                 {#each categories as category}
                     {@render categoryLink(category)}

@@ -1,22 +1,16 @@
-import { CMS_URL } from "$env/static/private";
-import { error } from "@sveltejs/kit";
-import { fetchWithRetry } from '$lib/utils.js';
+import { error, fail } from "@sveltejs/kit";
+import {
+    CMS_URL,
+    API_TELEGRAM_TOKEN,
+    TELEGRAM_CHAT_ID,
+} from "$env/static/private";
+import { fetchWithRetry, validateData } from "$lib/utils.js";
+import { productFormSchema } from "$lib/schemas.js";
 
 export async function load({ fetch }) {
     try {
-        /* const productsUrl = `${CMS_URL}/api/products?populate=*`;
-        const productsData = await fetchWithRetry(productsUrl);
-
-        const categoriesUrl = `${CMS_URL}/api/categories?populate=*`;
-        const categoriesData = await fetchWithRetry(categoriesUrl);
-
-        const mediaUrl = `${CMS_URL}/api/media?populate=*`;
-        const mediaData = await fetchWithRetry(mediaUrl); */
-
         const url = `${CMS_URL}/api/getHomeData`;
         const res = await fetchWithRetry(url);
-
-        console.log(res)
 
         return {
             homeData: res.homeData,
@@ -31,3 +25,46 @@ export async function load({ fetch }) {
         });
     }
 }
+
+export const actions = {
+    sendForm: async ({ request }) => {
+        const form = await request.formData();
+
+        try {
+            const { formData, errors } = await validateData(
+                form,
+                productFormSchema,
+            );
+
+            if (errors) {
+                return fail(400, {
+                    formData: formData,
+                    errors: errors.fieldErrors,
+                });
+            }
+
+            const message = `Заявка с bazhenovconcrete.ru:\nМодель: ${formData?.model}\nЦвет: ${formData?.color}\nИмя: ${formData.name}\nСпособ связи: ${formData.reachOutWay}\nГород: ${formData.city}\nКомментарий: ${formData.addInfo}`;
+
+            const req = await fetch(
+                `https://api.telegram.org/bot${API_TELEGRAM_TOKEN}/sendMessage`,
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                    }),
+                },
+            );
+
+            const res = await req.json();
+
+            return { success: true };
+        } catch (err) {
+            console.log(err, "err");
+            return fail(401, {
+                formData: formData,
+            });
+        }
+    },
+};

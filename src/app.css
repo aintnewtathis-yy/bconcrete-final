@@ -18,10 +18,20 @@
         position: relative;
     }
     .btn {
-        @apply flex w-fit items-center gap-3 rounded bg-gray-800 px-8 py-3 text-lg text-black transition duration-300 hover:bg-gray-900 active:bg-gray-900 max-sm:text-base;
+        @apply flex w-fit items-center justify-center gap-3 rounded bg-main-800 px-8 py-3 text-center text-lg text-black transition duration-300 hover:bg-main-900 active:bg-main-900 max-sm:text-base;
     }
     .btn-dark {
-        @apply flex w-fit items-center gap-3 rounded bg-gray-900 px-8 py-3 text-lg text-black transition duration-300 hover:bg-gray-800 active:bg-gray-800 max-sm:text-base;
+        @apply flex w-fit items-center justify-center gap-3 rounded bg-main-900 px-8 py-3 text-center text-lg text-black transition duration-300 hover:bg-main-800 active:bg-main-800 max-sm:text-base;
+    }
+    .btn-black {
+        @apply flex items-center justify-center rounded bg-black p-4 text-center text-lg text-white transition duration-300 hover:bg-zinc-700;
+    }
+    .btn-text {
+        @apply text-gray-400 underline transition duration-300 hover:text-black;
+    }
+
+    .basic-input {
+        @apply rounded border border-zinc-400/70 px-4 py-3 focus:border-main-800 focus:ring-gray-500;
     }
     section {
         max-width: 1920px;
@@ -29,11 +39,38 @@
 
         @apply mb-32 max-sm:mb-20;
     }
+    .container {
+        max-width: 1920px !important;
+    }
     .no-scrollbar {
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
     .no-scrollbar::-webkit-scrollbar {
         display: none;
+    }
+    .rich-text-block img {
+        @apply w-full rounded object-cover;
+    }
+    .rich-text-block ul {
+        @apply flex flex-col gap-3;
+    }
+    .rich-text-block li {
+        @apply pl-5;
+    }
+    .rich-text-block li::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        display: flex;
+        border-radius: 100%;
+        height: 8px;
+        width: 8px;
+        @apply bg-neutral-300;
+    }
+    .rich-text-block a {
+        @apply text-gray-400 underline transition duration-300 hover:text-black;
     }
 }

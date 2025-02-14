@@ -1,5 +1,6 @@
 {
-  "tabWidth": 4,
-  "useTabs": false,
-  "plugins": ["prettier-plugin-tailwindcss"]
+    "tabWidth": 4,
+    "htmlWhitespaceSensitivity": "ignore",
+    "useTabs": false,
+    "plugins": ["prettier-plugin-tailwindcss"]
 }

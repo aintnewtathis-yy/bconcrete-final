@@ -89,7 +89,7 @@
                     <li>
                         <a
                             class="hover:opacity-70 transition duration-300"
-                            href="#">Дизайнерам</a
+                            href="/client?page=opt">Дизайнерам</a
                         >
                     </li>
                 </ul>
@@ -102,13 +102,13 @@
                     <li>
                         <a
                             class="hover:opacity-70 transition duration-300"
-                            href="#">Клиентам</a
+                            href="/client">Клиентам</a
                         >
                     </li>
                     <li>
                         <a
                             class="hover:opacity-70 transition duration-300"
-                            href="#">Контакты</a
+                            href="/client?page=contacts">Контакты</a
                         >
                     </li>
                 </ul>
@@ -162,7 +162,7 @@
                 <li>
                     <a
                         class="hover:opacity-70 transition duration-300"
-                        href="#">Дизайнерам</a
+                        href="/client?page=opt">Дизайнерам</a
                     >
                 </li>
             </ul>
@@ -175,13 +175,13 @@
                 <li>
                     <a
                         class="hover:opacity-70 transition duration-300"
-                        href="#">Клиентам</a
+                        href="/client">Клиентам</a
                     >
                 </li>
                 <li>
                     <a
                         class="hover:opacity-70 transition duration-300"
-                        href="#">Контакты</a
+                        href="/client?page=contacts">Контакты</a
                     >
                 </li>
             </ul>

@@ -10,7 +10,6 @@
 
     let { data } = $props();
 
-    $inspect(data);
     let featuredProducts = $derived.by(() => {
         return data.products.filter((product) => product.featured === true);
     });

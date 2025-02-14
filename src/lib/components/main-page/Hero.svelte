@@ -4,8 +4,6 @@
 
     let { sliderData } = $props();
 
-    $inspect(sliderData);
-
     let section;
     let slidesContainer;
     let pagination;
@@ -14,40 +12,6 @@
     let slidesContainerElmts;
     let bgImage = $state();
 
-    let sliderContent = [
-        {
-            h1: "Проведите эту зиму c коллецией Hygge 1",
-            p: "Экспертный уход от бренда, основанного в Германии",
-            btnText: "Перейти в каталог",
-            btnLink: "#",
-            bgImage: "/hero-bg.png",
-            bgImageMobile: "/hero-bg-mobile.png",
-        },
-        {
-            h1: "Проведите эту зиму c коллецией Hygge 2",
-            p: "Экспертный уход от бренда, основанного в Германии",
-            btnText: "Перейти в каталог",
-            btnLink: "#",
-            bgImage: "/hero-bg2.png",
-            bgImageMobile: "/hero-bg-mobile2.png",
-        },
-        {
-            h1: "Проведите эту зиму c коллецией Hygge 3",
-            p: "Экспертный уход от бренда, основанного в Германии",
-            btnText: "Перейти в каталог",
-            btnLink: "#",
-            bgImage: "/hero-bg.png",
-            bgImageMobile: "/hero-bg-mobile.png",
-        },
-        {
-            h1: "123 4",
-            p: "Экспертный уход от бренда, основанного в Германии",
-            btnText: "Перейти в каталог",
-            btnLink: "#",
-            bgImage: "/hero-bg2.png",
-            bgImageMobile: "/hero-bg-mobile2.png",
-        },
-    ];
 
     function sliderOnClick(e, idInput) {
         clearInterval(interval);
@@ -174,7 +138,7 @@
             {#each sliderData as _, i}
                 <button
                     aria-label="button"
-                    class="bg-gray-700 h-full w-10 max-h-[2px] cursor-pointer transition-all"
+                    class="bg-main-700 h-full w-10 max-h-[2px] cursor-pointer transition-all"
                     data-visible={i}
                     onclick={sliderOnClick}
                 >
